@@ -19,7 +19,7 @@ for i in list:
 	except:
 		continue
 	nm=i.replace('_brandname_dnb','').replace('_brandname_tt','').replace('uk','gbr')
-	os.system("aws s3 cp s3://poi-s3mntebs/temp/share/v"+ver+"/brand_name_lookup/"+i+".txt E:\\brands\\ ")
+	os.system("aws s3 cp s3://temp/share/v"+ver+"/brand_name_lookup/"+i+".txt E:\\brands\\ ")
 	c2.execute('select wloaddelta(\''+i+'\',\''+nm+'\')')
 	conn1.commit()
 	
